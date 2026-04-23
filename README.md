@@ -1,91 +1,168 @@
-🚗 Car Reviews Analyzer with LLMs
+# 🚗 Car Reviews Analyzer with LLMs
 
-A comprehensive NLP-based system for analyzing car reviews using traditional machine learning techniques and Large Language Models (OpenAI / Anthropic).
+A comprehensive NLP system for analyzing car reviews using **traditional machine learning** and **Large Language Models (OpenAI / Anthropic)**.
 
-It transforms raw customer reviews into structured insights, including sentiment analysis, feature extraction, summaries, and visual dashboards.
+It converts raw customer reviews into structured insights such as sentiment, key features, summaries, and interactive visualizations.
 
-✨ Features
-📊 Sentiment analysis (traditional + LLM-based)
-🔍 Aspect-based sentiment detection (performance, comfort, safety, etc.)
-📈 Feature extraction and keyword analysis
-📝 Automated review summarization
-📊 Interactive visualizations (Matplotlib + Plotly)
-🤖 Support for OpenAI GPT and Anthropic Claude
-🚗 Car-specific insights (ratings, models, manufacturers)
-💾 Export processed results and reports
-📦 Installation
-1. Clone the repository
+---
+
+# ✨ Features
+
+* 📊 Sentiment analysis (traditional + LLM-based)
+* 🔍 Aspect-based sentiment detection (performance, comfort, safety, etc.)
+* 📈 Feature extraction and keyword analysis
+* 📝 Automatic review summarization
+* 📊 Interactive visual dashboards (Matplotlib + Plotly)
+* 🤖 Support for OpenAI GPT and Anthropic Claude
+* 🚗 Car-specific insights (ratings, models, manufacturers)
+* 💾 Exportable reports and processed datasets
+
+---
+
+# ⚙️ Installation
+
+## 1. Clone repository
+
+```bash
 git clone https://github.com/yourusername/car-reviews-analyzer.git
 cd car-reviews-analyzer
-2. Create virtual environment (recommended)
+```
+
+---
+
+## 2. Create virtual environment
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate   # Windows
 # source .venv/bin/activate  # Mac/Linux
-3. Install dependencies
+```
+
+---
+
+## 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
-🔐 Environment Setup
+```
 
-For LLM features, set your API keys:
+---
 
-Windows (PowerShell)
+# 🔐 Environment Setup
+
+## Set API keys (if using LLMs)
+
+### Windows (PowerShell)
+
+```bash
 setx OPENAI_API_KEY "your_openai_key"
 setx ANTHROPIC_API_KEY "your_anthropic_key"
+```
 
 Restart terminal after setting variables.
 
-🚀 Usage
-▶️ Run with sample data
+---
+
+# 🚀 Usage
+
+## ▶️ Run with sample data
+
+```bash
 python main.py
-📁 Run with your dataset
+```
+
+---
+
+## 📁 Run with custom dataset
+
+```bash
 python main.py --data-source path/to/your/reviews.csv
-⚡ Disable LLM (faster mode)
+```
+
+---
+
+## ⚡ Run without LLM (faster mode)
+
+```bash
 python main.py --no-llm
-🤖 Use Anthropic instead of OpenAI
+```
+
+---
+
+## 🤖 Use Anthropic instead of OpenAI
+
+```bash
 python main.py --llm-model anthropic
-📂 Input Data Format
+```
 
-Your CSV file must contain:
+---
 
-Column	Description
-review_text	Customer review text
-car_model	Car model name
-rating	Rating (1–5)
-year	Manufacturing year (optional)
-📊 Output
+# 📂 Input Data Format
+
+Your CSV must contain:
+
+| Column      | Description              |
+| ----------- | ------------------------ |
+| review_text | Customer review text     |
+| car_model   | Car model name           |
+| rating      | Rating (1–5)             |
+| year        | Manufacturing year (opt) |
+
+---
+
+# 📊 Output
 
 The system generates:
 
-Processed dataset (data/processed/)
-Sentiment analysis results
-Aspect scores
-JSON summary report
-Visual charts and dashboards
-📈 Example Output
+* Processed dataset (`data/processed/`)
+* Sentiment analysis results
+* Aspect score analysis
+* JSON summary report
+* Interactive visualizations
+
+---
+
+# 📈 Example Output
+
+```text
 Sentiment Distribution:
-- Positive: 45%
-- Neutral: 30%
-- Negative: 25%
+Positive: 45%
+Neutral: 30%
+Negative: 25%
+```
 
-Top Keywords:
-Positive: great, smooth, comfortable, excellent
-Negative: cheap, slow, noise, cramped
+**Top Keywords**
 
-Best Aspects:
-- performance
-- safety
-- technology
+* Positive: great, smooth, comfortable, excellent
+* Negative: cheap, slow, noise, cramped
 
-Weak Aspects:
-- fuel economy
-- maintenance cost
-🛠️ Tech Stack
-Python 3.12
-Pandas, NumPy
-NLTK / NLP tools
-Matplotlib, Seaborn, Plotly
-OpenAI API
-Anthropic Claude API
-📌 Project Structure
+**Best Aspects**
+
+* performance
+* safety
+* technology
+
+**Weak Aspects**
+
+* fuel economy
+* maintenance cost
+
+---
+
+# 🛠️ Tech Stack
+
+* Python 3.12
+* Pandas, NumPy
+* NLTK / NLP tools
+* Matplotlib, Seaborn, Plotly
+* OpenAI API
+* Anthropic Claude API
+
+---
+
+# 📁 Project Structure
+
+```text
 car-review-analyzer/
 │
 ├── src/
@@ -101,18 +178,21 @@ car-review-analyzer/
 ├── config.py
 ├── requirements.txt
 └── README.md
-⚙️ Running the Project
-pip install -r requirements.txt
-python main.py
-📜 License
+```
+
+---
+
+# 📜 License
 
 MIT License
+---
 
-🚀 Final Note
+# 🚀 Project Highlights
 
 This project demonstrates:
 
-End-to-end NLP pipeline design
-Real-world text analytics
-Integration of traditional ML + modern LLMs
-Data visualization and reporting
+* End-to-end NLP pipeline design
+* Real-world text analytics
+* Integration of ML + LLMs
+* Data visualization and reporting
+
