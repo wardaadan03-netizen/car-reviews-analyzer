@@ -1,0 +1,24 @@
+# Core dependencies
+openai
+anthropic
+python-dotenv
+
+# Data processing
+pandas
+numpy
+scikit-learn
+
+# Text processing
+nltk
+textblob
+
+# Visualization
+matplotlib
+seaborn
+plotly
+
+# Utilities
+tqdm
+pydantic
+click
+joblib

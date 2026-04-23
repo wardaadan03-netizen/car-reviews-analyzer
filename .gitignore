@@ -1,0 +1,214 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.suo
+*.user
+*.sln
+*.csproj
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Project specific - Models (large files)
+models/
+*.bin
+*.pth
+*.pt
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.onnx
+*.tflite
+
+# Project specific - Outputs (generated files)
+outputs/
+*.json
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.html
+*.log
+*.txt
+!requirements.txt
+!README.md
+
+# Cache directories
+.cache/
+cache/
+*.cache
+
+# Hugging Face cache
+.huggingface/
+~/.cache/huggingface/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+log.txt
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# Docker
+.dockerignore
+*.tar.gz
+*.tar
+
+# Data files (raw data - keep samples but ignore large datasets)
+data/*.csv
+data/*.xlsx
+data/*.json
+!data/sample_reviews.json
+!data/car_reviews.csv
+!data/reference_translations.txt
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Secret keys
+*.key
+*.pem
+*.crt
+secrets.py
+config_secret.py
+
+# Node modules (if any)
+node_modules/
+npm-debug.log
+
+# React / Next.js (if frontend added later)
+.next/
+out/
+build/
+
+# VS Code specific
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+
+# Jupyter Lab
+lab_workspace/
+jupyter_notebook_config.py
+
+# Streamlit (if added later)
+.streamlit/secrets.toml
+
+# DVC (Data Version Control)
+.dvc/
+.dvcignore
+
+# MLflow
+mlruns/
+mlflow.db
