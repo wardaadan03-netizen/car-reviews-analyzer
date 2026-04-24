@@ -3,9 +3,14 @@ import pandas as pd
 import json
 
 from src.data_loader import CarReviewsLoader
+import click
+import pandas as pd
+import json
+
+from src.data_loader import CarReviewsLoader
 from src.preprocessor import TextPreprocessor
 from src.sentiment_analyzer import SentimentAnalyzer
-from src.feature_extracter import FeatureExtractor
+from src.feature_extractor import FeatureExtractor
 from src.summarizer import ReviewSummarizer
 from src.visualizer import ReviewVisualizer
 from src.llm_analyzer import LLMAnalyzer
@@ -19,7 +24,7 @@ class CarReviewAnalyzer:
         self.sentiment = SentimentAnalyzer()
         self.feature_extractor = FeatureExtractor()
 
-        # IMPORTANT: LLM is optional
+        # LLM optional
         self.llm_analyzer = LLMAnalyzer(llm_model) if use_llm else None
         self.summarizer = ReviewSummarizer(self.llm_analyzer)
         self.visualizer = ReviewVisualizer()
@@ -29,7 +34,7 @@ class CarReviewAnalyzer:
     def run_analysis(self, data_source="sample", use_llm=True):
         print("🚗 Running Car Review Analysis...\n")
 
-        # Load data
+        # 1. Load data
         if data_source == "sample":
             df = self.loader.load_sample_data()
         else:
@@ -37,30 +42,31 @@ class CarReviewAnalyzer:
 
         print(f"Loaded {len(df)} reviews")
 
-        # Preprocess
+        # 2. Preprocess
         df = self.preprocessor.preprocess_reviews(df)
 
-        # Sentiment
+        # 3. Sentiment analysis
         df = self.sentiment.analyze_reviews(df)
 
-        # Feature extraction
+        # 4. Feature extraction (FIXED)
         df = self.feature_extractor.extract_rating_features(df)
+        df = self.feature_extractor.extract_text_features(df)
 
-        # LLM (SAFE)
+        # 5. LLM (SAFE)
         if use_llm and self.llm_analyzer:
             print("🤖 Running LLM analysis...")
             reviews = df["review_text"].tolist()[:3]
             llm_results = self.llm_analyzer.batch_analyze(reviews, "sentiment")
             print("LLM Results:", llm_results)
 
-        # Summary (SAFE)
+        # 6. Summary
         summary = self.summarizer.generate_review_summary(df["review_text"].tolist())
         print("\n📄 Summary:", summary)
 
-        # Visualization
+        # 7. Visualization
         self.visualizer.plot_sentiment_distribution(df)
 
-        # Save
+        # 8. Save
         self.loader.save_processed_data(df, "output.csv")
 
         print("\n✅ Done!")
